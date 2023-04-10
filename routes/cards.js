@@ -4,7 +4,7 @@ const app = new Router()
 
 
 //archived cards's
-app.get('/:board', (req,res) => {
+app.get('/archived/:board', (req,res) => {
 
 })
 

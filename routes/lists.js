@@ -3,7 +3,7 @@ const { Router } = require("express");
 const app = new Router()
 
 //archived list's
-app.get('/:board', (req,res) => {
+app.get('/archived/:board', (req,res) => {
 
 })
 
