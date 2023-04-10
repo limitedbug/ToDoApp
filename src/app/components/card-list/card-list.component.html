@@ -1,0 +1,10 @@
+<mat-selection-list #cards>
+    <mat-list-option *ngFor="let card of cardList" [selected]="card.isActive">
+      <p>{{card.name}}</p>
+      
+    </mat-list-option>
+    <p *ngIf="cardList.length == 0"> No hay nada por hacer</p>
+  </mat-selection-list>
+  <p *ngIf="cardList.length != 0">
+    {{cards.selectedOptions.selected.length}} / {{cardList.length}} tareas completadas
+  </p>

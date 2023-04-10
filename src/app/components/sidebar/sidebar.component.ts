@@ -7,8 +7,13 @@ import { NewBoardComponent } from '../forms/new-board/new-board.component';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  boards:any = []
   constructor(public dialog: MatDialog) {}
+  isShowing: boolean = true;
   openDialog() {
     this.dialog.open(NewBoardComponent,{});
+  }
+  toggleSidenav() {
+    this.isShowing = !this.isShowing;
   }
 }
