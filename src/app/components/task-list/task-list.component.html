@@ -1,1 +1,10 @@
-<p>task-list works!</p>
+<mat-selection-list #tasks>
+    <mat-list-option *ngFor="let task of taskList" [selected]="task.isActive">
+      <p>{{task.name}}</p>
+      
+    </mat-list-option>
+    <p *ngIf="taskList.length == 0"> No hay nada por hacer</p>
+  </mat-selection-list>
+  <p *ngIf="taskList.length != 0">
+    {{tasks.selectedOptions.selected.length}} / {{taskList.length}} tareas completadas
+  </p>

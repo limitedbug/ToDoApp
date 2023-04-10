@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ToDoApp';
+  
+cards = [
+  {
+    name: 'Tareas',
+    taskList: [
+      {name: 'efe', isActive: true},
+      {name: 'efe', isActive: true},
+      {name: 'efe', isActive: false},
+      {name: 'efe', isActive: false},
+      {name: 'efe', isActive: true},
+    ]
+  }
+]
 }
