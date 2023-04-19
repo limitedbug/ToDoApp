@@ -1,9 +1,15 @@
 const { Router } = require("express");
 
 const app = new Router()
-
-app.get('/', (req,res) => {
-    
+const {connect} = require('../db/conn')
+app.get('/', async(req,res) => {
+    const connection = await connect();
+  
+    const [rows] = await connection.execute('SELECT * FROM boards');
+  
+    connection.end();
+  
+    return rows;
 })
 app.get('/closed', (req,res) => {
     
@@ -20,6 +26,6 @@ app.delete('/close/:id', (req,res) => {
 
 })
 
-app.delete('/:id', (req,res) => {
+app.delete('/closed/:id', (req,res) => {
 
 })
